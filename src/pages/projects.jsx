@@ -5,7 +5,7 @@ import Footer from "../components/footer"
 
 import "../components/tailwind.css";
 
-const Homepage = () => {
+const Projects = () => {
   return (
     <>
       <main className="bg-blue-150 w-5/12 h-screen mx-auto">
@@ -14,11 +14,11 @@ const Homepage = () => {
           Hello World, my name is Andrel
         </div>
         <Footer
-          isActive="home"
+          isActive="projects"
         />
       </main>
     </>
   )
 };
 
-export default Homepage;
+export default Projects;
