@@ -10,7 +10,7 @@ import "../components/tailwind.css";
 const Homepage = () => {
   return (
     <>
-      <main className="bg-blue-150 w-full md:w-container h-screen mx-auto">
+      <main className="relative bg-blue-150 w-full md:w-container h-screen mx-auto">
         <SEO
           title="Homepage"
         />
