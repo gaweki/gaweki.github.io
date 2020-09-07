@@ -25,7 +25,7 @@ let urlW3 = "http://www.w3.org/2000/svg"
 const Footer = ({ isActive }) => (
   <footer className="flex fixed bottom-0 justify-between w-full md:w-container">
     {
-      footers.map( (footer,i) => <div key={i} className="w-4/12 py-6">
+      footers.map( (footer,i) => <div key={i} className="w-4/12 py-4">
       <Link to={footer.url} key={i}>
         <svg className={`mx-auto ${isActive !== footer.tabName ? `opacity-25` : ``}`}
           xmlns={urlW3} width="27" height="27" fill="none" viewBox="0 0 27 27" stroke="currentColor">
