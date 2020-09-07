@@ -10,7 +10,10 @@ const Profile = () => {
   return (
     <>
       <main className="bg-blue-150 w-5/12 h-screen mx-auto">
-        <SEO title="Profile" />
+        <SEO
+          title="Profile"
+          description="My profile"
+        />
         <Header />
         <div className="pt-10">
           Hello World, my name is Andrel

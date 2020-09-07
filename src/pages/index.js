@@ -10,7 +10,9 @@ const Homepage = () => {
   return (
     <>
       <main className="bg-blue-150 w-5/12 h-screen mx-auto">
-        <SEO title="Homepage" />
+        <SEO
+          title="Homepage"
+        />
         <Header />
         <div className="pt-10">
           Hello World, my name is Andrel<br/>

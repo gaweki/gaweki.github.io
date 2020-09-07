@@ -11,7 +11,10 @@ const Projects = () => {
   return (
     <>
       <main className="bg-blue-150 w-5/12 h-screen mx-auto">
-        <SEO title="Projects" />
+        <SEO
+          title="Projects"
+          description="My works"
+        />
         <Header />
         <Body />
         <Footer
