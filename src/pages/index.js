@@ -3,6 +3,7 @@ import React from "react";
 import Header from "../components/header"
 import Footer from "../components/footer"
 import SEO from "../components/seo"
+import Contact from "../components/contact"
 
 import "../components/tailwind.css";
 
@@ -18,6 +19,7 @@ const Homepage = () => {
           Hello World, my name is Andrel<br/>
           My complete name is Andrel Karunia Sitanggang<br />
         </div>
+        <Contact />
         <Footer
           isActive="home"
         />

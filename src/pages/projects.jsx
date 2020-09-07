@@ -3,6 +3,7 @@ import React from "react";
 import Header from "../components/header"
 import Body from "../components/projects/body"
 import Footer from "../components/footer"
+import Contact from "../components/contact"
 import SEO from "../components/seo"
 
 import "../components/tailwind.css";
@@ -17,6 +18,7 @@ const Projects = () => {
         />
         <Header />
         <Body />
+        <Contact />
         <Footer
           isActive="projects"
         />
