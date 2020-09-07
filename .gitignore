@@ -68,3 +68,5 @@ yarn-error.log
 # Yarn Integrity file
 .yarn-integrity
 yarn.lock
+
+src/components/__tests__/__snapshots__/*
