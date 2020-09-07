@@ -1,4 +1,4 @@
-const { colors } = require('tailwindcss/defaultTheme')
+const { colors, width } = require('tailwindcss/defaultTheme')
 
 module.exports = {
   purge: ["./src/**/*.js", "./src/**/*.jsx", "./src/**/*.ts", "./src/**/*.tsx"],
@@ -9,6 +9,10 @@ module.exports = {
           ...colors.blue,
           "150": "rgb(245,247,250)"
         }
+      },
+      width: {
+        ...width,
+        container: '590px'
       }
     },
   },
