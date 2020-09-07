@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Introduce, Andrel`,
     description: `My profile website, so you can more enjoy to look my profile`,
-    author: `@gatsbyjs`,
+    author: `@gaweki|@functionandrel`,
   },
   plugins: [
     `gatsby-plugin-postcss`,
