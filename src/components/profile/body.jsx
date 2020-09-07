@@ -3,6 +3,8 @@ import React from "react";
 const Profile = () => {
   return (
     <div className="pt-10">
+      Address: <br/>
+      Palmerah, Jakarta Barat <br/>
       Education: <br/>
       andrel.sitanggang@gmail.com <br/>
       D3 Gadjah Mada University, 2013 - 2017<br/>
