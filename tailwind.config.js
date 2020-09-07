@@ -5,8 +5,8 @@ module.exports = {
   theme: {
     inset: {
       '0': 0,
-      '24': '6.9rem',
-      '7': '1.9rem'
+      '28': '6.9rem',
+      '8': '1.9rem'
     },
     extend: {
       colors: {
