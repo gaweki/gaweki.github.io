@@ -16,7 +16,7 @@ const Contact = () => {
     </div>
     <div className="absolute right-20 bottom-40">
       
-      <div className="fixed z-30 right-20 bottom-40">
+      <div className="fixed z-30 bottom-40">
         <a className={`pb-3 ${show? `block` : `hidden`}`} href="https://twitter.com/messages/compose?recipient_id=963052414264688640&text=Hello%20Andrel">
             <svg width="40" height="40" fill="rgba(29,161,242,1.00)" viewBox="0 0 25 25">
                 <g>
