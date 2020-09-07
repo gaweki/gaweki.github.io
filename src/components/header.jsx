@@ -28,11 +28,10 @@ const images = [
 ]
 
 const Header = () => (
-  <nav className="fixed top-0 left-0 flex bg-white h-10 text-sm items-center w-full justify-center">
-    <img className="rounded-full w-8 h-8 m-0" src="https://lh3.google.com/u/0/ogw/ADGmqu9OdI4BpgS_NOLiy19cjJN758P6LsbRPV_DtGWW=s83-c-mo" alt="Andrel" />
+  <nav className="fixed top-0 left-0 right-0 mx-auto flex bg-white h-10 text-sm items-center w-container justify-center">
+    <span>Andrel Karunia Sitanggang </span>
     <span className="w-1 h-1 bg-black rounded-full mx-2"></span>
-    <span className="mr-2">Andrel Karunia Sitanggang </span>
-    <span>Frontend Web Developer</span>
+    <span>Frontend Developer</span>
     <span className="w-1 h-1 bg-black rounded-full mx-2"></span>
     <div className="flex items-center">
       {
