@@ -23,7 +23,7 @@ let footers = [
 let urlW3 = "http://www.w3.org/2000/svg"
 
 const Footer = ({ isActive }) => (
-  <footer className="flex fixed bottom-0 justify-between w-5/12">
+  <footer className="flex fixed bottom-0 justify-between w-container">
     {
       footers.map( (footer,i) => <div key={i} className="w-4/12 py-6">
       <Link to={footer.url} key={i}>
