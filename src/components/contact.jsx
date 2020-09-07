@@ -7,12 +7,12 @@ const Contact = () => {
   return (
     <>
     <div role="button" tabIndex="0" aria-label="Toggle Background Contacts" onKeyDown={() => setShow(false)}  onClick={() => setShow(false)} className={`w-full h-screen fixed top-0 left-0 z-20 ${show ? `block` : `hidden`}`}></div>
-    <div role="button" tabIndex="0" aria-label="Toggle Contacts" onKeyDown={(e) => e.keyCode === 67 ? setShow(prevState => !prevState) : ''} onClick={() => setShow(prevState => !prevState)} className={`z-10 fixed border-black p-2 border bottom-6 right-30 bottom-110 border rounded-full ${show ? `hidden` : `block`}`}>
+    <div role="button" tabIndex="0" aria-label="Toggle Contacts" onKeyDown={(e) => e.keyCode === 67 ? setShow(prevState => !prevState) : ''} onClick={() => setShow(prevState => !prevState)} className={`z-10 fixed border-black p-2 border bottom-6 right-8 bottom-28 border rounded-full ${show ? `hidden` : `block`}`}>
       <svg width="30" height="30" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 25 25" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="{2}" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
       </svg>
       </div>
-    <div className="fixed z-30 right-30 bottom-110">
+    <div className="fixed z-30 right-8 bottom-28">
       <a className={`pb-3 ${show? `block` : `hidden`}`} href="https://twitter.com/messages/compose?recipient_id=963052414264688640&text=Hello%20Andrel">
           <svg width="40" height="40" fill="rgba(29,161,242,1.00)" viewBox="0 0 25 25">
               <g>
