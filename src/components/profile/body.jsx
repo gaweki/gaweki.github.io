@@ -21,6 +21,16 @@ const Profile = () => {
       https://twitter.com/functionandrel <br />
       https://id-id.facebook.com/people/Andrel-Karunia-Sitanggang/100004816399261 <br />
       https://www.instagram.com/andrelst.g/<br />
+      Kelebihan: <br />
+      1. Jujur <br />
+      2. Disiplin <br />
+      3. Integritas <br />
+      4. Loyal <br />
+      Kekurangan: <br />
+      1. Overthinking <br />
+      2. Fokus Berlebihan Pada Detail <br />
+      3. Kurang Sabaran <br />
+      4. Mudah kecewa <br />
     </div>
   )
 };
