@@ -8,9 +8,9 @@ const Contact = () => {
     <>
       <div role="button" tabIndex="0" aria-label="Toggle Background Contacts" onKeyDown={() => setShow(false)} onClick={() => setShow(false)} className={`w-full h-screen fixed top-0 left-0 z-20 ${show ? `block` : `hidden`}`}></div>
       <div className="absolute right-20 bottom-40">
-        <div role="button" tabIndex="0" aria-label="Toggle Contacts" onKeyDown={(e) => e.keyCode === 67 ? setShow(prevState => !prevState) : ''} onClick={() => setShow(prevState => !prevState)} className={`z-10 fixed border-black p-2 border border rounded-full shadow-md bg-blue-300 ${show ? `hidden` : `block`}`}>
+        <div role="button" tabIndex="0" aria-label="Toggle Contacts" onKeyDown={(e) => e.key === 67 ? setShow(prevState => !prevState) : ''} onClick={() => setShow(prevState => !prevState)} className={`z-10 fixed border-black p-2 border-2 rounded-full shadow-md bg-blue-300 ${show ? `hidden` : `block`}`}>
           <svg width="30" height="30" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 25 25" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="{2}" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            <path strokeLinecap="round" strokeLinejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
           </svg>
         </div>
       </div>
