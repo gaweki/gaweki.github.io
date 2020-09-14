@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "gatsby"
+import Contact from "./contact"
 
 
 let footers = [
@@ -24,6 +25,7 @@ let urlW3 = "http://www.w3.org/2000/svg"
 
 const Footer = ({ isActive }) => (
   <footer className="flex fixed bottom-0 justify-between w-full md:w-container left-0 right-0 mx-auto">
+    <Contact />
     
     {
       footers.map( (footer,i) => <div key={i} className="w-4/12 py-4">
