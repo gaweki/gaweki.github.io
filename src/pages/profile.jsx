@@ -10,7 +10,7 @@ import "../components/tailwind.css";
 const Profile = () => {
   return (
     <>
-      <main className="relative bg-blue-150 w-full md:w-container h-screen mx-auto p-3">
+      <main className="relative bg-blue-150 w-full md:w-container h-screen mx-auto p-3 overflow-auto pb-16">
         <SEO
           title="Profile"
           description="My profile"
