@@ -1,6 +1,8 @@
 import React from "react";
 import jsLogo from "../images/gatsby-icon.png"
 
+import 'typeface-pt-sans';
+
 const images = [
   {
     name: "Javascript Logo",
@@ -9,7 +11,7 @@ const images = [
 ]
 
 const Header = () => (
-  <nav className="fixed top-0 left-0 right-0 mx-auto flex bg-white h-10 items-center w-full md:w-container justify-center shadow-bottom-default">
+  <nav className="fixed top-0 left-0 right-0 mx-auto flex bg-white h-10 items-center w-full md:w-container justify-center shadow-bottom-default  font-pt-sans">
     <span>Andrel Karunia Sitanggang </span>
     <span className="w-1 h-1 bg-black rounded-full mx-2"></span>
     <div className="flex items-center">
