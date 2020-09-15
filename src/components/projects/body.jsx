@@ -3,7 +3,7 @@ import React from "react";
 const Projects = () => {
   return (
     <div className="pt-10">
-      Open source<br/>
+      Open source<br />
       DuckDuckGo<br />
       Translations - Indonesian Language<br />
       ReactJS ID<br />
@@ -12,17 +12,27 @@ const Projects = () => {
       <a href="https://github.com/ealush/vest/issues/310">Add __DEV__ = true to development build</a><br />
       <br />
       Frontend web developer<br />
-      Oktober 2018 - Maret 2019<br/>
-      kuismilioner.com<br/>
-      April 2019 - Now<br/>
+      Oktober 2018 - Maret 2019<br />
+      kuismilioner.com<br />
+      April 2019 - Now<br />
       PT. Distributor Indonesia Unggul - Jakarta<br />
       Frontend web developer<br />
-      Oktober 2018 - Maret 2019<br/>
-      kuismilioner.com<br/>
+      Oktober 2018 - Maret 2019<br />
+      kuismilioner.com<br />
       Frontend web developer<br />
-      November 2016 - Maret 2018<br/>
+      November 2016 - Maret 2018<br />
       Gotraining.co.id<br />
       Frontend web developer<br />
+      <br />
+      CV Link : <span className="underline" tabIndex="0" onKeyDown={(e) => e.key === 67 ? '' : ''} role="button" aria-label="Button Share CV" onClick={() => {
+        navigator.share({
+          title: 'CV Andrel',
+          url: 'https://drive.google.com/file/d/1cgDzV-w3B6ZYJlFg6h0wjB8toMZoaA-s/view?usp=sharing'
+        }).then(() => {
+          console.log('Thanks for sharing!');
+        })
+          .catch(console.error);
+      }}>click here</span>
     </div>
   )
 };
