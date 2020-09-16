@@ -1,4 +1,4 @@
-const { colors, width, boxShadow } = require('tailwindcss/defaultTheme')
+const { colors, width, boxShadow, fontFamily } = require('tailwindcss/defaultTheme')
 
 module.exports = {
   purge: ["./src/**/*.js", "./src/**/*.jsx", "./src/**/*.ts", "./src/**/*.tsx"],
@@ -19,6 +19,10 @@ module.exports = {
       width: {
         ...width,
         container: '590px'
+      },
+      fontFamily: {
+        ...fontFamily,
+        'pt-sans': '"PT Sans", sans-serif',
       }
     },
     boxShadow: {
