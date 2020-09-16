@@ -5,6 +5,7 @@ module.exports = {
   theme: {
     inset: {
       '0': 0,
+      '8' : '2rem',
       '40': '10rem',
       '20': '5rem'
     },
