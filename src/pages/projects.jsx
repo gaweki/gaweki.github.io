@@ -14,7 +14,7 @@ const Projects = () => {
       <main className="relative bg-blue-150 w-full md:w-container h-screen mx-auto p-3 overflow-auto pb-16 font-pt-sans">
         <SEO
           title="Projects"
-          description="My works"
+          description="Andrel Karunia Sitanggang: My works"
         />
         <Header />
         <Body />

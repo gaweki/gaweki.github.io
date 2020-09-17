@@ -14,7 +14,7 @@ const Profile = () => {
       <main className="relative bg-blue-150 w-full md:w-container h-screen mx-auto p-3 overflow-auto pb-16 font-pt-sans">
         <SEO
           title="Profile"
-          description="My profile"
+          description="Andrel Karunia Sitanggang: My profile"
         />
         <Header />
         <Body />
