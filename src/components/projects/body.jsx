@@ -1,5 +1,7 @@
 import React from "react";
 
+import { handleShareURL } from "../../utils/general";
+
 const Projects = () => {
   return (
     <div className="pt-10">
@@ -24,15 +26,12 @@ const Projects = () => {
       Gotraining.co.id<br />
       Frontend web developer<br />
       <br />
-      CV Link : <span className="underline" tabIndex="0" onKeyDown={(e) => e.key === 67 ? '' : ''} role="button" aria-label="Button Share CV" onClick={() => {
-        navigator.share({
-          title: 'CV Andrel',
-          url: 'https://drive.google.com/file/d/1cgDzV-w3B6ZYJlFg6h0wjB8toMZoaA-s/view?usp=sharing'
-        }).then(() => {
-          console.log('Thanks for sharing!');
-        })
-          .catch(console.error);
-      }}>click here</span>
+      CV Link : <span className="underline" tabIndex="0" onKeyDown={(e) => e.key === 67 ? '' : ''} 
+          role="button" 
+          aria-label="Button Share CV"
+          onClick={() => handleShareURL('CV Andrel','https://drive.google.com/file/d/1cgDzV-w3B6ZYJlFg6h0wjB8toMZoaA-s/view?usp=sharing')}>
+          click here
+        </span>
     </div>
   )
 };
