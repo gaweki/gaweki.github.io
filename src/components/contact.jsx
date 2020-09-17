@@ -7,19 +7,19 @@ const Contact = () => {
   return (
     <>
       <div role="button" tabIndex="0" aria-label="Toggle Background Contacts" onKeyDown={() => setShow(false)} onClick={() => setShow(false)} className={`w-full h-screen fixed top-0 left-0 z-20 ${show ? `block` : `hidden`}`}></div>
-      <div className="w-full">
-        <div className="relative flex justify-end">
+      <div className="w-full relative">
+        <div className={`relative flex justify-end ${show ? `hidden` : `block`}`}>
           <div role="button" tabIndex="0" aria-label="Toggle Contacts"
             onKeyDown={(e) => e.key === 67 ? setShow(prevState => !prevState) : ''}
             onClick={() => setShow(prevState => !prevState)}
-            className={`z-10 right-8 bottom-20 relative border-black p-2 border-2 rounded-full shadow-md bg-blue-300 ${show ? `hidden` : `block`}`}>
+            className={`z-10 right-8 bottom-20 absolute border-black p-2 border-2 rounded-full shadow-md bg-blue-300`}>
             <svg width="30" height="30" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 25 25" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
             </svg>
           </div>
         </div>
 
-        <div className={`relative flex justify-end bottom-20 ${show ? `block` : `hidden`}`}>
+        <div className={`absolute flex justify-end bottom-20 w-full ${show ? `block` : `hidden`}`}>
           <div className="right-8 relative">
             <a className={`pb-3`} href="https://twitter.com/messages/compose?recipient_id=963052414264688640&text=Hello%20Andrel">
               <svg width="40" height="40" fill="rgba(29,161,242,1.00)" viewBox="0 0 25 25">
@@ -34,8 +34,8 @@ const Contact = () => {
               <svg viewBox="0 0 36 36" fill="url(#jsc_s_2)" height="40" width="40">
                 <defs>
                   <linearGradient x1="50%" x2="50%" y1="97.0782153%" y2="0%" id="jsc_s_2">
-                    <stop offset="0%" stop-color="#0062E0"></stop>
-                    <stop offset="100%" stop-color="#19AFFF"></stop>
+                    <stop offset="0%" stopColor="#0062E0"></stop>
+                    <stop offset="100%" stopColor="#19AFFF"></stop>
                   </linearGradient>
                 </defs>
                 <path d="M15 35.8C6.5 34.3 0 26.9 0 18 0 8.1 8.1 0 18 0s18 8.1 18 18c0 8.9-6.5 16.3-15 17.8l-1-.8h-4l-1 .8z"></path>
@@ -43,7 +43,7 @@ const Contact = () => {
               </svg>
             </a>
             <a href="https://mail.google.com/mail/?view=cm&fs=1&to=andrel.sitanggang@gmail.com&su=Hello%20Andrel">
-              <img class="w-10" src="https://img.icons8.com/color/2x/gmail.png" alt="Email andrel" />
+              <img className="w-10" src="https://img.icons8.com/color/2x/gmail.png" alt="Email andrel" />
             </a>
           </div>
           </div>
