@@ -7,7 +7,7 @@ const Profile = () => {
       Address: <br />
       Palmerah, Jakarta Barat <br />
       Education: <br />
-      <a className="underline" target="_blank" href={personalUrl.gmailMe}>andrel.sitanggang@gmail.com</a> <br />
+      <a className="underline" target="_blank" rel="noopener noreferrer" href={personalUrl.gmailMe}>andrel.sitanggang@gmail.com</a> <br />
       D3 Gadjah Mada University, 2013 - 2017<br />
       S1 Informatics Engineering, 2018 - Now <br />
       Hobby: <br />
@@ -19,11 +19,11 @@ const Profile = () => {
       Referrences<br />
       Irfan Maulana - Head Of Technology Tokodistributor.com <br />
       Professional Sosial Media <br />
-      <a className="underline" target="_blank" href={personalUrl.lilnkedin}>https://www.linkedin.com/in/sitanggangandrel/</a> <br />
+      <a className="underline" target="_blank" rel="noopener noreferrer" href={personalUrl.lilnkedin}>https://www.linkedin.com/in/sitanggangandrel/</a> <br />
       Sosmed Link: <br />
-      <a className="underline" target="_blank" href={personalUrl.twitter}>https://twitter.com/functionandrel</a> <br />
-      <a className="underline" target="_blank" href={personalUrl.facebook}>https://id-id.facebook.com/people/Andrel-Karunia-Sitanggang/100004816399261</a> <br />
-      <a className="underline" target="_blank" href={personalUrl.instagram}>https://www.instagram.com/andrelst.g</a> <br />
+      <a className="underline" target="_blank" rel="noopener noreferrer" href={personalUrl.twitter}>https://twitter.com/functionandrel</a> <br />
+      <a className="underline" target="_blank" rel="noopener noreferrer" href={personalUrl.facebook}>https://id-id.facebook.com/people/Andrel-Karunia-Sitanggang/100004816399261</a> <br />
+      <a className="underline" target="_blank" rel="noopener noreferrer" href={personalUrl.instagram}>https://www.instagram.com/andrelst.g</a> <br />
       Kelebihan: <br />
       1. Jujur <br />
       2. Disiplin <br />
