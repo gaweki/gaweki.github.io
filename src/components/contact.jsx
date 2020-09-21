@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { personalUrl } from "..//static/data";
 
 const Contact = () => {
 
@@ -6,7 +7,7 @@ const Contact = () => {
 
   return (
     <>
-      <div role="button" tabIndex="0" aria-label="Toggle Background Contacts" onKeyDown={() => setShow(false)} onClick={() => setShow(false)} className={`w-full h-screen fixed top-0 left-0 z-20 ${show ? `block` : `hidden`}`}></div>
+      <div role="button" tabIndex="0" aria-label="Toggle Background Contacts" onKeyDown={() => setShow(false)} onClick={() => setShow(false)} className={`w-full h-screen fixed top-0 left-0 z-10 ${show ? `block` : `hidden`}`}></div>
       <div className="w-full relative">
         <div className={`relative flex justify-end ${show ? `hidden` : `block`}`}>
           <div role="button" tabIndex="0" aria-label="Toggle Contacts"
@@ -19,9 +20,9 @@ const Contact = () => {
           </div>
         </div>
 
-        <div className={`absolute flex justify-end bottom-20 w-full ${show ? `block` : `hidden`}`}>
+        <div className={`absolute flex justify-end bottom-20 w-full z-20 ${show ? `block` : `hidden`}`}>
           <div className="right-10 relative">
-            <a className={`pb-3 block`} href="https://twitter.com/messages/compose?recipient_id=963052414264688640&text=Hello%20Andrel">
+            <a className={`pb-3 block`} href={personalUrl.twitterDMMe}>
               <svg className="filter-shadow-md" width="40" height="40" fill="rgba(29,161,242,1.00)" viewBox="0 0 25 25">
                 <g>
                   <path
@@ -30,7 +31,7 @@ const Contact = () => {
                 </g>
               </svg>
             </a>
-            <a className={`pb-3 block`} href="https://m.facebook.com/messages/compose?ids=100011595496988">
+            <a className={`pb-3 block`} href={personalUrl.facebookMessageMe}>
               <svg className="filter-shadow-md" viewBox="0 0 36 36" fill="url(#jsc_s_2)" height="40" width="40">
                 <defs>
                   <linearGradient x1="50%" x2="50%" y1="97.0782153%" y2="0%" id="jsc_s_2">
@@ -42,11 +43,11 @@ const Contact = () => {
                 <path fill="white" d="M25 23l.8-5H21v-3.5c0-1.4.5-2.5 2.7-2.5H26V7.4c-1.3-.2-2.7-.4-4-.4-4.1 0-7 2.5-7 7v4h-4.5v5H15v12.7c1 .2 2 .3 3 .3s2-.1 3-.3V23h4z"></path>
               </svg>
             </a>
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=andrel.sitanggang@gmail.com&su=Hello%20Andrel">
+            <a href={personalUrl.gmailMe}>
               <img className="shadow-md w-10" src="https://img.icons8.com/color/2x/gmail.png" alt="Email andrel" />
             </a>
           </div>
-          </div>
+        </div>
       </div>
     </>
   )

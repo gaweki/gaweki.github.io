@@ -1,13 +1,14 @@
 import React from "react";
+import { personalUrl } from "../../static/data";
 
 const Profile = () => {
   return (
     <div className="pt-10">
-      Address: <br/>
-      Palmerah, Jakarta Barat <br/>
-      Education: <br/>
-      andrel.sitanggang@gmail.com <br/>
-      D3 Gadjah Mada University, 2013 - 2017<br/>
+      Address: <br />
+      Palmerah, Jakarta Barat <br />
+      Education: <br />
+      <a className="underline" target="_blank" href={personalUrl.gmailMe}>andrel.sitanggang@gmail.com</a> <br />
+      D3 Gadjah Mada University, 2013 - 2017<br />
       S1 Informatics Engineering, 2018 - Now <br />
       Hobby: <br />
       Reading <br />
@@ -17,10 +18,12 @@ const Profile = () => {
       PT Distribusi Indonesia Unggul <br />
       Referrences<br />
       Irfan Maulana - Head Of Technology Tokodistributor.com <br />
+      Professional Sosial Media <br />
+      <a className="underline" target="_blank" href={personalUrl.lilnkedin}>https://www.linkedin.com/in/sitanggangandrel/</a> <br />
       Sosmed Link: <br />
-      https://twitter.com/functionandrel <br />
-      https://id-id.facebook.com/people/Andrel-Karunia-Sitanggang/100004816399261 <br />
-      https://www.instagram.com/andrelst.g/<br />
+      <a className="underline" target="_blank" href={personalUrl.twitter}>https://twitter.com/functionandrel</a> <br />
+      <a className="underline" target="_blank" href={personalUrl.facebook}>https://id-id.facebook.com/people/Andrel-Karunia-Sitanggang/100004816399261</a> <br />
+      <a className="underline" target="_blank" href={personalUrl.instagram}>https://www.instagram.com/andrelst.g</a> <br />
       Kelebihan: <br />
       1. Jujur <br />
       2. Disiplin <br />
