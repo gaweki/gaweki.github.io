@@ -9,21 +9,24 @@ const Projects = () => {
       DuckDuckGo<br />
       Translations - Indonesian Language<br />
       ReactJS ID<br />
-      Translations - Indonesian Language<br />
+      Fix conflict commit - Indonesian Language<br />
       Vest<br />
-      <a href="https://github.com/ealush/vest/issues/310">Add __DEV__ = true to development build</a><br />
+      <a className="underline" target="_blank" rel="noopener noreferrer" href="https://github.com/ealush/vest/issues/310">Add __DEV__ = true to development build</a><br />
+      Hospital Run <br />
+      <a className="underline" target="_blank" rel="noopener noreferrer" href="https://github.com/HospitalRun/hospitalrun-frontend/issues/2372">Care Plan list view action button shows translation key instead of translation text</a><br />
+      <a className="underline" target="_blank" rel="noopener noreferrer" href="https://github.com/HospitalRun/hospitalrun-frontend/issues/2295">Successfully completed lab shows translation key instead of actual text</a><br />
       <br />
       Frontend web developer<br />
       Oktober 2018 - Maret 2019<br />
-      kuismilioner.com<br />
+      tokodistributor.com @ <a target="_blank" rel="noopener noreferrer" className="underline" href="https://www.tokodistributor.com/">https://www.tokodistributor.com/</a> <br />
       April 2019 - Now<br />
       PT. Distributor Indonesia Unggul - Jakarta<br />
       Frontend web developer<br />
       Oktober 2018 - Maret 2019<br />
-      kuismilioner.com<br />
+      kuismilioner.com @ <a target="_blank" rel="noopener noreferrer" className="underline" href="https://www.milikumi.com/">https://www.milikumi.com/</a><br />
       Frontend web developer<br />
       November 2016 - Maret 2018<br />
-      Gotraining.co.id<br />
+      Gotraining.co.id @ <a target="_blank" rel="noopener noreferrer" className="underline" href="https://www.gotraining.co.id/">https://www.gotraining.co.id/</a><br />
       Frontend web developer<br />
       <br />
       CV Link : <span className="underline" tabIndex="0" onKeyDown={(e) => e.key === 67 ? '' : ''}
