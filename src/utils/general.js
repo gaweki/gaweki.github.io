@@ -12,5 +12,6 @@ export const handleShareURL = (title, url) => {
       .catch(console.error);
   } else {
     navigator.clipboard.writeText(url);
+    window.open(url, '_blank');
   }
 }
