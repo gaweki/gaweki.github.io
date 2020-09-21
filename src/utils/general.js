@@ -11,10 +11,6 @@ export const handleShareURL = (title, url) => {
     })
       .catch(console.error);
   } else {
-    navigator.clipboard.writeText(url).then(function () {
-      console.log('Copying to clipboard was successful!');
-    }, function (err) {
-      console.error('Async: Could not copy text: ', err);
-    });
+    navigator.clipboard.writeText(url);
   }
 }
