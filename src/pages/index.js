@@ -15,7 +15,7 @@ const Homepage = () => {
           title="Homepage"
         />
         <Header />
-        <div className="pt-10">
+        <div className="pt-10 flex items-center justify-center text-center underline h-full">
           Hello World, my name is Andrel<br />
           My complete name is Andrel Karunia Sitanggang<br />
         </div>
