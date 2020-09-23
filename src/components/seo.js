@@ -54,7 +54,7 @@ function SEO({ description, lang, meta, title }) {
           meta={[
             {
               name: `description`,
-              content: handleDescription(data.site.siteMetadata.description) ,
+              content: handleDescription(data.site.siteMetadata.description),
             },
             {
               property: `og:title`,
@@ -89,14 +89,31 @@ function SEO({ description, lang, meta, title }) {
               content: "6l-jQIAA55_iUjs_-5myibyZvNGLgiavaiKucdthJBk",
             }
           ].concat(meta)}
-        />
+        >
+          <script type="application/ld+json">
+            {`
+                {
+                  "@context": "https://schema.org",
+                  "@type": "Organization",
+                  "url": "https://gaweki.github.io",
+                  "name": "Portfolio Website Andrel",
+                  "contactPoint": {
+                    "@type": "ContactPoint",
+                    "email": "andrel.sitanggang@gmail.com",
+                    "contactType": "Personal Email",
+                    "description": "Ask anything about me
+                  }
+                }
+              `}
+          </script>
+        </Helmet>
       )}
     />
   )
 }
 
 SEO.defaultProps = {
-  lang: `en`,
+  lang: `id`,
   meta: [],
   description: ``,
 }
