@@ -7,20 +7,20 @@ const Contact = () => {
 
   return (
     <>
-      <div role="button" tabIndex="0" aria-label="Toggle Background Contacts" onKeyDown={() => setShow(false)} onClick={() => setShow(false)} className={`w-full h-screen fixed top-0 left-0 z-10 ${show ? `block` : `hidden`}`}></div>
+      <div role="button" tabIndex="0" aria-label="Toggle Background Contacts" onKeyDown={() => setShow(false)} onClick={() => setShow(false)} className={`w-full h-screen fixed top-0 left-0 z-20 ${show ? `block` : `hidden`}`}></div>
       <div className="w-full relative">
-        <div className={`relative flex justify-end ${show ? `hidden` : `block`}`}>
+        <div className={`relative z-10 flex justify-end ${show ? `hidden` : `block`}`}>
           <div role="button" tabIndex="0" aria-label="Toggle Contacts"
             onKeyDown={(e) => e.key === 67 ? setShow(prevState => !prevState) : ''}
             onClick={() => setShow(prevState => !prevState)}
-            className={`z-10 right-8 bottom-20 absolute border-black p-2 border-2 rounded-full shadow-md bg-blue-300`}>
+            className={`right-8 bottom-20 absolute border-black p-2 border-2 rounded-full shadow-md bg-blue-300`}>
             <svg width="30" height="30" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 25 25" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
             </svg>
           </div>
         </div>
 
-        <div className={`absolute flex justify-end bottom-20 w-full z-20 ${show ? `block` : `hidden`}`}>
+        <div className={`absolute flex justify-end bottom-20 w-full z-10 ${show ? `block` : `hidden`}`}>
           <div className="right-10 relative">
             <a className={`pb-3 block`} href={personalUrl.twitterDMMe}>
               <svg className="filter-shadow-md" width="40" height="40" fill="rgba(29,161,242,1.00)" viewBox="0 0 25 25">
