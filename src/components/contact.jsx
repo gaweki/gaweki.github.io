@@ -20,8 +20,8 @@ const Contact = () => {
           </div>
         </div>
 
-        <div className={`absolute flex justify-end bottom-20 w-full z-10 ${show ? `block` : `hidden`}`}>
-          <div className="right-10 relative">
+        <div className={`absolute flex justify-end bottom-20 w-full ${show ? `block` : `hidden`}`}>
+          <div className="right-10 relative z-20">
             <a className={`pb-3 block`} href={personalUrl.twitterDMMe}>
               <svg className="filter-shadow-md" width="40" height="40" fill="rgba(29,161,242,1.00)" viewBox="0 0 25 25">
                 <g>
