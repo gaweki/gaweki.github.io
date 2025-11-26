@@ -1,8 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `Introduce, Andrel`,
-    description: `My profile website, so you can more enjoy to look my profile`,
-    author: `@gaweki|@functionandrel`,
+    title: `Andrel Karunia Sitanggang`,
+    description: `Portfolio website of Andrel Karunia Sitanggang - Software Developer specializing in Full Stack Development with JavaScript, React, and modern web technologies. Explore my projects, skills, and professional experience.`,
+    author: `@functionandrel`,
+    siteUrl: `https://gaweki.github.io`,
   },
   plugins: [
     `gatsby-plugin-postcss`,
@@ -19,17 +20,23 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `CV Andrel`,
-        short_name: `Andrel`,
+        name: `Andrel Karunia Sitanggang - Portfolio`,
+        short_name: `Andrel Portfolio`,
         start_url: `/`,
-        background_color: `#F5F7FA`,
-        theme_color: `#F5F7FA`,
-        display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        background_color: `#0f172a`,
+        theme_color: `#06b6d4`,
+        display: `standalone`,
+        icon: `src/images/gatsby-icon.png`,
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
     `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-plugin-typescript`,
+        options: {
+          isTSX: true, // defaults to false
+          jsxPragma: `jsx`, // defaults to "React"
+          allExtensions: true, // defaults to false
+        },
+     }
   ],
 }

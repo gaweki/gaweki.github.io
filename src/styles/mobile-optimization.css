@@ -1,0 +1,113 @@
+/**
+ * Mobile Optimization Utilities
+ * Enhances touch targets, safe areas, and mobile layout
+ */
+
+/* ==================== TOUCH TARGETS ==================== */
+
+/* Ensure minimum touch target size of 44x44px */
+@media (max-width: 768px) {
+  a, button, input[type="submit"], .btn {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 12px;
+  }
+
+  nav a {
+    padding: 14px 16px;
+  }
+}
+
+/* ==================== SAFE AREAS ==================== */
+
+/* Respect safe areas for notched devices */
+@supports (padding: max(0px)) {
+  .safe-padding-top {
+    padding-top: max(1rem, env(safe-area-inset-top));
+  }
+
+  .safe-padding-bottom {
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+
+  .safe-padding-left {
+    padding-left: max(1rem, env(safe-area-inset-left));
+  }
+
+  .safe-padding-right {
+    padding-right: max(1rem, env(safe-area-inset-right));
+  }
+}
+
+/* ==================== MOBILE TYPOGRAPHY ==================== */
+
+@media (max-width: 640px) {
+  h1 {
+    font-size: 2.25rem !important; /* 36px */
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-size: 1.75rem !important; /* 28px */
+  }
+
+  h3 {
+    font-size: 1.5rem !important; /* 24px */
+  }
+
+  p {
+    font-size: 1rem !important; /* 16px */
+  }
+}
+
+/* ==================== PERFORMANCE ==================== */
+
+/* Optimize scrolling performance */
+.scroll-container {
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+/* Hardware acceleration for animations */
+.hardware-accelerated {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* ==================== UI IMPROVEMENTS ==================== */
+
+/* Prevent text selection on interactive elements */
+button, .btn, .nav-link {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Better tap highlight color */
+* {
+  -webkit-tap-highlight-color: rgba(6, 182, 212, 0.2);
+}
+
+/* Stack columns on mobile */
+@media (max-width: 768px) {
+  .mobile-stack {
+    flex-direction: column;
+  }
+  
+  .mobile-full-width {
+    width: 100%;
+  }
+}
+
+/* Hide elements on specific breakpoints */
+@media (max-width: 640px) {
+  .hide-on-mobile {
+    display: none !important;
+  }
+}
+
+@media (min-width: 641px) {
+  .hide-on-desktop {
+    display: none !important;
+  }
+}

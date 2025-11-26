@@ -1,36 +1,63 @@
 const { colors, width, boxShadow, fontFamily } = require('tailwindcss/defaultTheme')
 
 module.exports = {
-  purge: ["./src/**/*.js", "./src/**/*.jsx", "./src/**/*.ts", "./src/**/*.tsx"],
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    inset: {
-      '0': 0,
-      '8' : '2rem',
-      '10' : '2.5rem',
-      '40': '10rem',
-      '20': '5rem'
-    },
     extend: {
       colors: {
-        blue: {
-          ...colors.blue,
-          "150": "rgb(245,247,250)"
+        // Dark Theme Palette
+        background: {
+          primary: 'var(--color-background-primary)',
+          secondary: 'var(--color-background-secondary)',
+          tertiary: 'var(--color-background-tertiary)',
+        },
+        surface: {
+          DEFAULT: 'var(--color-surface)',
+          elevated: 'var(--color-surface-elevated)',
+          hover: 'var(--color-surface-hover)',
+        },
+        accent: {
+          primary: 'var(--color-accent-primary)',
+          secondary: 'var(--color-accent-secondary)',
+          tertiary: 'var(--color-accent-tertiary)',
+        },
+        text: {
+          primary: 'var(--color-text-primary)',
+          secondary: 'var(--color-text-secondary)',
+          muted: 'var(--color-text-muted)',
+        },
+        border: {
+          DEFAULT: 'var(--color-border)',
+          focus: 'var(--color-border-focus)',
         }
       },
-      width: {
-        ...width,
-        container: '590px'
-      },
       fontFamily: {
-        ...fontFamily,
-        'pt-sans': '"PT Sans", sans-serif',
+        sans: ['var(--font-family-base)', ...fontFamily.sans],
+        mono: ['var(--font-family-mono)', ...fontFamily.mono],
+      },
+      boxShadow: {
+        'sm': 'var(--shadow-sm)',
+        'md': 'var(--shadow-md)',
+        'lg': 'var(--shadow-lg)',
+        'xl': 'var(--shadow-xl)',
+        '2xl': 'var(--shadow-2xl)',
+        'glow': 'var(--shadow-glow)',
+        'glow-lg': 'var(--shadow-glow-lg)',
+      },
+      transitionDuration: {
+        'fast': 'var(--transition-fast)',
+        'base': 'var(--transition-base)',
+        'slow': 'var(--transition-slow)',
+      },
+      zIndex: {
+        'dropdown': 'var(--z-dropdown)',
+        'sticky': 'var(--z-sticky)',
+        'fixed': 'var(--z-fixed)',
+        'modal': 'var(--z-modal)',
+        'popover': 'var(--z-popover)',
+        'tooltip': 'var(--z-tooltip)',
       }
     },
-    boxShadow: {
-      ...boxShadow,
-      'bottom-default': '0 3px 3px 0 rgba(0, 0, 0, 0.06)'
-    }
   },
-  variants: {},
   plugins: [],
 }

@@ -1,0 +1,14 @@
+{
+  "rules": {
+    "react/react-in-jsx-scope": "off"
+  },
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "requireConfigFile": false
+  }
+}
