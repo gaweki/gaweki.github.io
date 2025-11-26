@@ -3,6 +3,8 @@
  * Pure dark mode with prominent, smooth animations
  */
 
+@import "tailwindcss";
+
 /* ==================== CSS CUSTOM PROPERTIES ==================== */
 :root {
   /* Color Palette - Dark Theme */
