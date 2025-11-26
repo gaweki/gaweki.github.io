@@ -103,7 +103,7 @@ const PORTFOLIO_DATA = {
 
 // --- Components ---
 
-const SectionTitle = ({ title, subtitle }) => (
+const SectionTitle = ({ title, subtitle }: { title: string; subtitle?: string }) => (
   <div className="mb-12 text-center reveal-on-scroll">
     <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gradient">{title}</h2>
     <div className="h-1 w-20 bg-[var(--color-accent-primary)] mx-auto rounded-full mb-4 shadow-glow"></div>
@@ -111,7 +111,7 @@ const SectionTitle = ({ title, subtitle }) => (
   </div>
 );
 
-const Card = ({ children, className = "", hoverEffect = true }) => (
+const Card = ({ children, className = "", hoverEffect = true }: { children: React.ReactNode; className?: string; hoverEffect?: boolean }) => (
   <div className={`
     bg-[var(--color-surface)] 
     border border-[var(--color-border)] 
@@ -124,7 +124,7 @@ const Card = ({ children, className = "", hoverEffect = true }) => (
   </div>
 );
 
-const Badge = ({ children }) => (
+const Badge = ({ children }: { children: React.ReactNode }) => (
   <span className="px-3 py-1 text-xs font-medium rounded-full bg-[var(--color-accent-primary)]/10 text-[var(--color-accent-primary)] border border-[var(--color-accent-primary)]/20">
     {children}
   </span>
@@ -145,18 +145,18 @@ const Homepage = () => {
   return (
     <div className="min-h-screen bg-[var(--color-background-primary)] text-[var(--color-text-primary)] font-sans selection:bg-[var(--color-accent-primary)] selection:text-white overflow-x-hidden">
       <SEO title="Home" pathname="/" />
-      
+
       <Header />
 
       <main className="pt-20">
-        
+
         {/* Hero Section */}
         <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden px-4 cursor-follow-container">
           {/* Background Gradients & Effects */}
           <div className="absolute top-20 left-10 w-72 h-72 bg-[var(--color-accent-primary)]/10 rounded-full blur-[100px] animate-pulse-glow"></div>
           <div className="absolute bottom-20 right-10 w-96 h-96 bg-[var(--color-accent-secondary)]/10 rounded-full blur-[100px] animate-float"></div>
           <div className="cursor-glow"></div>
-          
+
           <div className="relative z-10 max-w-5xl mx-auto text-center">
             <div className="inline-block mb-6 px-4 py-2 rounded-full border border-[var(--color-accent-primary)]/30 bg-[var(--color-accent-primary)]/10 text-[var(--color-accent-primary)] text-sm font-medium animate-fade-in">
               👋 Welcome to my portfolio
@@ -176,11 +176,11 @@ const Homepage = () => {
               </a>
             </div>
           </div>
-          
+
           {/* Scroll Indicator */}
           <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-text-muted)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
+              <path d="M7 13l5 5 5-5M7 6l5 5 5-5" />
             </svg>
           </div>
         </section>
@@ -202,7 +202,7 @@ const Homepage = () => {
         {/* Experience & Education Split */}
         <section id="profile" className="py-24 px-4 max-w-7xl mx-auto">
           <SectionTitle title="My Journey" subtitle="Professional experience and educational background" />
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Experience Column */}
             <div className="reveal-on-scroll">
@@ -290,7 +290,7 @@ const Homepage = () => {
         </section>
 
         {/* Projects Section */}
-        <section id="projects" className="py-24 px-4 max-w-7xl mx-auto">
+        <section id="projects" className="py-24 px-4 max-w-7xl mx-auto mb-16">
           <SectionTitle title="Featured Projects" subtitle="Some of the things I've built" />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 stagger-children">
             {PORTFOLIO_DATA.projects.map((project, idx) => (
@@ -312,53 +312,129 @@ const Homepage = () => {
         </section>
 
         {/* Contact & Personal Details */}
-        <section id="contact" className="py-24 px-4 max-w-4xl mx-auto reveal-on-scroll">
-          <Card className="p-8 md:p-12 border-[var(--color-accent-primary)]/30 bg-[var(--color-surface)]/80 backdrop-blur-lg shadow-glow-lg">
-            <div className="text-center mb-10">
-              <h2 className="text-3xl font-bold text-white mb-4">Let's Work Together</h2>
-              <p className="text-[var(--color-text-secondary)]">I'm currently open to new opportunities and collaborations.</p>
-            </div>
+        <section id="contact" className="pt-32 pb-24 px-4 max-w-6xl mx-auto reveal-on-scroll">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Let's Work <span className="text-gradient">Together</span>
+            </h2>
+            <p className="text-xl text-[var(--color-text-secondary)] max-w-2xl mx-auto">
+              I'm currently open to new opportunities and collaborations.
+              Feel free to reach out!
+            </p>
+          </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-              {/* Contact Details */}
-              <div className="space-y-6">
-                <div>
-                  <h4 className="text-sm font-bold text-[var(--color-text-muted)] uppercase mb-1 tracking-wider">Email</h4>
-                  <a href={`mailto:${PORTFOLIO_DATA.personal.email}`} className="text-lg text-[var(--color-accent-primary)] hover:text-[var(--color-accent-secondary)] transition-colors">
-                    {PORTFOLIO_DATA.personal.email}
-                  </a>
-                </div>
-                <div>
-                  <h4 className="text-sm font-bold text-[var(--color-text-muted)] uppercase mb-1 tracking-wider">Location</h4>
-                  <p className="text-lg text-[var(--color-text-primary)]">{PORTFOLIO_DATA.personal.address}</p>
-                </div>
-                <div>
-                  <h4 className="text-sm font-bold text-[var(--color-text-muted)] uppercase mb-3 tracking-wider">Socials</h4>
-                  <div className="flex gap-4">
-                    {PORTFOLIO_DATA.personal.social.map((social, idx) => (
-                      <a key={idx} href={social.url} target="_blank" rel="noreferrer" className="w-12 h-12 flex items-center justify-center bg-[var(--color-surface-elevated)] rounded-full hover:bg-[var(--color-accent-primary)] hover:text-white transition-all text-xl shadow-md hover:shadow-glow transform hover:scale-110" title={social.name}>
-                        {social.icon}
-                      </a>
-                    ))}
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
+            {/* Contact Information - Left Side */}
+            <div className="lg:col-span-2 space-y-10">
+              {/* Email */}
+              <div className="group">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-12 h-12 rounded-xl bg-[var(--gradient-primary)] flex items-center justify-center shadow-glow group-hover:scale-110 transition-transform">
+                    <svg width="24" height="24" fill="white" viewBox="0 0 24 24">
+                      <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-semibold text-[var(--color-text-muted)] uppercase tracking-wider mb-1">Email</h4>
+                    <a
+                      href={`mailto:${PORTFOLIO_DATA.personal.email}`}
+                      className="text-lg font-medium text-[var(--color-text-primary)] hover:text-[var(--color-accent-primary)] transition-colors"
+                    >
+                      {PORTFOLIO_DATA.personal.email}
+                    </a>
                   </div>
                 </div>
               </div>
 
-              {/* Simple Form */}
-              <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-                <input type="text" placeholder="Name" className="w-full px-4 py-3 bg-[var(--color-background-primary)] border border-[var(--color-border)] rounded-lg focus:border-[var(--color-accent-primary)] focus:ring-1 focus:ring-[var(--color-accent-primary)] focus:outline-none text-white transition-all" />
-                <input type="email" placeholder="Email" className="w-full px-4 py-3 bg-[var(--color-background-primary)] border border-[var(--color-border)] rounded-lg focus:border-[var(--color-accent-primary)] focus:ring-1 focus:ring-[var(--color-accent-primary)] focus:outline-none text-white transition-all" />
-                <textarea rows={4} placeholder="Message" className="w-full px-4 py-3 bg-[var(--color-background-primary)] border border-[var(--color-border)] rounded-lg focus:border-[var(--color-accent-primary)] focus:ring-1 focus:ring-[var(--color-accent-primary)] focus:outline-none text-white transition-all"></textarea>
-                <button className="w-full btn btn-primary">
-                  Send Message
-                </button>
-              </form>
+              {/* Location */}
+              <div className="group">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-12 h-12 rounded-xl bg-[var(--gradient-secondary)] flex items-center justify-center shadow-glow group-hover:scale-110 transition-transform">
+                    <svg width="24" height="24" fill="white" viewBox="0 0 24 24">
+                      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-semibold text-[var(--color-text-muted)] uppercase tracking-wider mb-1">Location</h4>
+                    <p className="text-lg font-medium text-[var(--color-text-primary)]">
+                      {PORTFOLIO_DATA.personal.address}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Social Links */}
+              <div>
+                <h4 className="text-sm font-semibold text-[var(--color-text-muted)] uppercase tracking-wider mb-4">Connect With Me</h4>
+                <div className="flex gap-4">
+                  {PORTFOLIO_DATA.personal.social.map((social, idx) => (
+                    <a
+                      key={idx}
+                      href={social.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="w-14 h-14 flex items-center justify-center bg-[var(--color-surface)] border border-[var(--color-border)] rounded-xl hover:bg-[var(--gradient-primary)] hover:border-[var(--color-accent-primary)] hover:text-white hover:shadow-glow transition-all text-2xl transform hover:scale-110 hover:-translate-y-1"
+                      title={social.name}
+                    >
+                      {social.icon}
+                    </a>
+                  ))}
+                </div>
+              </div>
             </div>
-          </Card>
+
+            {/* Contact Form - Right Side */}
+            <div className="lg:col-span-3">
+              <Card className="p-8 border-[var(--color-accent-primary)]/20 bg-[var(--color-surface)]/80 backdrop-blur-lg shadow-xl hover:shadow-glow-lg hover:border-[var(--color-accent-primary)]/40 transition-all">
+                <h3 className="text-2xl font-bold text-white mb-6">Send Me a Message</h3>
+                <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
+                  <div>
+                    <label htmlFor="contact-name" className="block text-sm font-medium text-[var(--color-text-secondary)] mb-2">
+                      Your Name
+                    </label>
+                    <input
+                      id="contact-name"
+                      type="text"
+                      placeholder="John Doe"
+                      className="w-full px-5 py-4 bg-[var(--color-background-primary)] border border-[var(--color-border)] rounded-xl focus:border-[var(--color-accent-primary)] focus:ring-2 focus:ring-[var(--color-accent-primary)]/20 focus:outline-none text-white placeholder:text-[var(--color-text-muted)] transition-all"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="contact-email" className="block text-sm font-medium text-[var(--color-text-secondary)] mb-2">
+                      Your Email
+                    </label>
+                    <input
+                      id="contact-email"
+                      type="email"
+                      placeholder="john@example.com"
+                      className="w-full px-5 py-4 bg-[var(--color-background-primary)] border border-[var(--color-border)] rounded-xl focus:border-[var(--color-accent-primary)] focus:ring-2 focus:ring-[var(--color-accent-primary)]/20 focus:outline-none text-white placeholder:text-[var(--color-text-muted)] transition-all"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="contact-message" className="block text-sm font-medium text-[var(--color-text-secondary)] mb-2">
+                      Message
+                    </label>
+                    <textarea
+                      id="contact-message"
+                      rows={5}
+                      placeholder="Tell me about your project..."
+                      className="w-full px-5 py-4 bg-[var(--color-background-primary)] border border-[var(--color-border)] rounded-xl focus:border-[var(--color-accent-primary)] focus:ring-2 focus:ring-[var(--color-accent-primary)]/20 focus:outline-none text-white placeholder:text-[var(--color-text-muted)] transition-all resize-none"
+                    ></textarea>
+                  </div>
+                  <button className="w-full btn btn-primary text-lg font-semibold py-4 shadow-glow">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" className="mr-2">
+                      <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+                    </svg>
+                    Send Message
+                  </button>
+                </form>
+              </Card>
+            </div>
+          </div>
         </section>
-        
+
         <Footer />
-        
+
         {/* Scroll Progress Bar */}
         <div className="scroll-progress"></div>
       </main>
