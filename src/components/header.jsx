@@ -21,9 +21,8 @@ const Header = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 mx-auto flex items-center w-full justify-center transition-all duration-300 ${
-        isScrolled ? 'py-3 bg-[var(--color-background-secondary)] backdrop-blur-md shadow-lg' : 'py-4 bg-transparent'
-      }`}
+      className={`fixed top-0 left-0 right-0 mx-auto flex items-center w-full justify-center transition-all duration-300 ${isScrolled ? 'py-3 bg-[var(--color-background-secondary)] backdrop-blur-md shadow-lg' : 'py-4 bg-transparent'
+        }`}
       style={{
         zIndex: 'var(--z-fixed)',
         borderBottom: isScrolled
@@ -72,12 +71,12 @@ const Header = () => {
             </div>
           </div>
         </Link>
-        
+
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-1">
           <NavLink to="/" label="Home" />
-          <NavLink to="/#projects" label="Projects" />
-          <NavLink to="/#profile" label="Profile" />
+          <AnchorLink to="#projects" label="Projects" />
+          <AnchorLink to="#profile" label="Profile" />
           <div className="ml-6 pl-6 border-l border-[var(--color-border)]">
             <a
               href="#contact"
@@ -91,7 +90,7 @@ const Header = () => {
             </a>
           </div>
         </div>
-        
+
         {/* Mobile Menu Button */}
         <button
           className="md:hidden relative w-10 h-10 flex items-center justify-center rounded-lg transition-all duration-300 hover:bg-[var(--color-surface-hover)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent-primary)]"
@@ -103,19 +102,16 @@ const Header = () => {
         >
           <div className="w-6 h-6 flex flex-col justify-center items-center">
             <span
-              className={`block w-5 h-0.5 bg-current transition-all duration-300 ${
-                isMenuOpen ? 'rotate-45 translate-y-0.5' : '-translate-y-1.5'
-              }`}
+              className={`block w-5 h-0.5 bg-current transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-0.5' : '-translate-y-1.5'
+                }`}
             />
             <span
-              className={`block w-5 h-0.5 bg-current transition-all duration-300 ${
-                isMenuOpen ? 'opacity-0' : 'opacity-100'
-              }`}
+              className={`block w-5 h-0.5 bg-current transition-all duration-300 ${isMenuOpen ? 'opacity-0' : 'opacity-100'
+                }`}
             />
             <span
-              className={`block w-5 h-0.5 bg-current transition-all duration-300 ${
-                isMenuOpen ? '-rotate-45 -translate-y-0.5' : 'translate-y-1.5'
-              }`}
+              className={`block w-5 h-0.5 bg-current transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-0.5' : 'translate-y-1.5'
+                }`}
             />
           </div>
         </button>
@@ -124,9 +120,8 @@ const Header = () => {
       {/* Mobile Menu */}
       <div
         id="mobile-menu"
-        className={`md:hidden absolute top-full left-0 right-0 transition-all duration-300 overflow-hidden ${
-          isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
-        }`}
+        className={`md:hidden absolute top-full left-0 right-0 transition-all duration-300 overflow-hidden ${isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+          }`}
         style={{
           background: 'var(--color-surface)',
           borderBottom: '1px solid var(--color-border)',
@@ -138,8 +133,8 @@ const Header = () => {
       >
         <div className="px-4 py-6 space-y-4">
           <MobileNavLink to="/" label="Home" onClick={() => setIsMenuOpen(false)} />
-          <MobileNavLink to="/#projects" label="Projects" onClick={() => setIsMenuOpen(false)} />
-          <MobileNavLink to="/#profile" label="Profile" onClick={() => setIsMenuOpen(false)} />
+          <MobileAnchorLink to="#projects" label="Projects" onClick={() => setIsMenuOpen(false)} />
+          <MobileAnchorLink to="#profile" label="Profile" onClick={() => setIsMenuOpen(false)} />
           <div className="pt-4 border-t border-[var(--color-border)]">
             <a
               href="#contact"
@@ -190,6 +185,49 @@ const MobileNavLink = ({ to, label, onClick }) => (
   >
     {label}
   </Link>
+);
+
+// Desktop Anchor Link Component (for hash navigation)
+const AnchorLink = ({ to, label }) => (
+  <a
+    href={to}
+    className="relative px-4 py-2 rounded-lg font-medium transition-all duration-300 group overflow-hidden focus-visible:ring-2 focus-visible:ring-[var(--color-accent-primary)]"
+    style={{ color: 'var(--color-text-primary)' }}
+    onClick={(e) => {
+      e.preventDefault();
+      const id = to.replace('#', '');
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    }}
+  >
+    <span className="relative z-10 group-hover:text-[var(--color-accent-primary)] transition-colors">
+      {label}
+    </span>
+    <div
+      className="absolute inset-0 bg-[var(--color-accent-primary)] opacity-0 group-hover:opacity-10 transition-opacity duration-300 rounded-lg"
+    />
+    <div
+      className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-[var(--color-accent-primary)] group-hover:w-full group-hover:left-0 transition-all duration-300"
+    />
+  </a>
+);
+
+// Mobile Anchor Link Component (for hash navigation)
+const MobileAnchorLink = ({ to, label, onClick }) => (
+  <a
+    href={to}
+    className="block px-4 py-3 rounded-lg font-medium transition-all duration-300 hover:bg-[var(--color-surface-hover)] hover:text-[var(--color-accent-primary)] focus-visible:ring-2 focus-visible:ring-[var(--color-accent-primary)]"
+    style={{ color: 'var(--color-text-primary)' }}
+    onClick={(e) => {
+      e.preventDefault();
+      const id = to.replace('#', '');
+      onClick?.();
+      setTimeout(() => {
+        document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    }}
+  >
+    {label}
+  </a>
 );
 
 export default Header;

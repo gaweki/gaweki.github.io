@@ -143,7 +143,7 @@ const Homepage = () => {
   if (!mounted) return null;
 
   return (
-    <div className="min-h-screen bg-[var(--color-background-primary)] text-[var(--color-text-primary)] font-sans selection:bg-[var(--color-accent-primary)] selection:text-white overflow-x-hidden">
+    <div className="min-h-screen bg-[var(--color-background-primary)] text-[var(--color-text-primary)] font-sans selection:bg-[var(--color-accent-primary)] selection:text-white">
       <SEO title="Home" pathname="/" />
 
       <Header />
@@ -168,10 +168,24 @@ const Homepage = () => {
               {PORTFOLIO_DATA.personal.role}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up animate-delay-300">
-              <a href="#projects" className="btn btn-primary btn-fancy">
+              <a
+                href="#projects"
+                className="btn btn-primary btn-fancy"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
                 View My Work
               </a>
-              <a href="#contact" className="btn btn-secondary">
+              <a
+                href="#contact"
+                className="btn btn-secondary"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
                 Contact Me
               </a>
             </div>
