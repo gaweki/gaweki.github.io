@@ -63,7 +63,7 @@ const Header = () => {
                 Andrel Karunia
               </span>
               <span
-                className="text-xs block"
+                className="text-xs block mt-1"
                 style={{ color: 'var(--color-text-muted)' }}
               >
                 Software Developer

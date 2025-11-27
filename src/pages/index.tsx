@@ -214,10 +214,10 @@ const Homepage = () => {
         </section>
 
         {/* Experience & Education Split */}
-        <section id="profile" className="py-24 px-4 max-w-7xl mx-auto">
+        <section id="profile" className="pt-32 pb-24 px-8 max-w-7xl mx-auto">
           <SectionTitle title="My Journey" subtitle="Professional experience and educational background" />
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 px-6">
             {/* Experience Column */}
             <div className="reveal-on-scroll">
               <div className="flex items-center mb-8">
@@ -255,11 +255,11 @@ const Homepage = () => {
                 </div>
                 <div className="space-y-6">
                   {PORTFOLIO_DATA.education.map((edu, idx) => (
-                    <Card key={idx} className="flex flex-col card-glow-border">
-                      <h4 className="text-lg font-bold text-[var(--color-text-primary)]">{edu.school}</h4>
-                      <p className="text-[var(--color-accent-secondary)]">{edu.degree}</p>
-                      <p className="text-sm text-[var(--color-text-muted)] mt-1 font-mono">{edu.period}</p>
-                      {edu.activities && <p className="text-sm text-[var(--color-text-secondary)] mt-2 italic">{edu.activities}</p>}
+                    <Card key={idx} className="flex flex-col card-glow-border p-6">
+                      <h4 className="text-lg font-bold text-[var(--color-text-primary)] mb-2">{edu.school}</h4>
+                      <p className="text-[var(--color-accent-secondary)] mb-1">{edu.degree}</p>
+                      <p className="text-sm text-[var(--color-text-muted)] mt-2 font-mono">{edu.period}</p>
+                      {edu.activities && <p className="text-sm text-[var(--color-text-secondary)] mt-3 italic">{edu.activities}</p>}
                     </Card>
                   ))}
                 </div>
@@ -274,9 +274,9 @@ const Homepage = () => {
                 <div className="grid gap-4">
                   {PORTFOLIO_DATA.openSource.map((os, idx) => (
                     <a key={idx} href={os.url || "#"} target={os.url ? "_blank" : "_self"} className="block group">
-                      <Card className="py-4 px-5 flex justify-between items-center hover:bg-[var(--color-surface-hover)]">
+                      <Card className="py-5 px-6 flex justify-between items-center hover:bg-[var(--color-surface-hover)]">
                         <div>
-                          <h5 className="font-bold text-[var(--color-text-primary)] group-hover:text-[var(--color-accent-primary)] transition-colors">{os.project}</h5>
+                          <h5 className="font-bold text-[var(--color-text-primary)] group-hover:text-[var(--color-accent-primary)] transition-colors mb-1">{os.project}</h5>
                           <p className="text-sm text-[var(--color-text-secondary)]">{os.desc}</p>
                         </div>
                         {os.url && <span className="text-[var(--color-text-muted)] group-hover:text-[var(--color-accent-primary)]">↗</span>}
@@ -290,7 +290,7 @@ const Homepage = () => {
         </section>
 
         {/* Skills Section */}
-        <section className="py-24 bg-[var(--color-surface)]/30 reveal-on-scroll">
+        <section className="py-24 px-8 bg-[var(--color-surface)]/30 reveal-on-scroll">
           <div className="max-w-6xl mx-auto px-4">
             <SectionTitle title="Technologies" subtitle="My technical toolbelt" />
             <div className="flex flex-wrap justify-center gap-3 stagger-children">
@@ -304,18 +304,18 @@ const Homepage = () => {
         </section>
 
         {/* Projects Section */}
-        <section id="projects" className="py-24 px-4 max-w-7xl mx-auto mb-16">
+        <section id="projects" className="py-24 px-8 max-w-7xl mx-auto mb-16">
           <SectionTitle title="Featured Projects" subtitle="Some of the things I've built" />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 stagger-children">
             {PORTFOLIO_DATA.projects.map((project, idx) => (
-              <Card key={idx} className="flex flex-col h-full card-3d">
+              <Card key={idx} className="flex flex-col h-full card-3d p-6">
                 <div className="h-48 bg-gradient-to-br from-[var(--color-surface-elevated)] to-[var(--color-background-secondary)] rounded-lg mb-6 flex items-center justify-center text-5xl shadow-inner relative overflow-hidden group">
                   <div className="absolute inset-0 bg-[var(--gradient-primary)] opacity-10 group-hover:opacity-20 transition-opacity duration-500"></div>
                   💻
                 </div>
-                <h3 className="text-xl font-bold text-[var(--color-text-primary)] mb-3">{project.title}</h3>
+                <h3 className="text-xl font-bold text-[var(--color-text-primary)] mb-4">{project.title}</h3>
                 <p className="text-[var(--color-text-secondary)] mb-6 flex-grow leading-relaxed">{project.desc}</p>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 mt-auto">
                   {project.tags.map((tag, tIdx) => (
                     <Badge key={tIdx}>{tag}</Badge>
                   ))}
@@ -326,7 +326,7 @@ const Homepage = () => {
         </section>
 
         {/* Contact & Personal Details */}
-        <section id="contact" className="pt-32 pb-24 px-4 max-w-6xl mx-auto reveal-on-scroll">
+        <section id="contact" className="pt-32 pb-24 px-8 max-w-6xl mx-auto reveal-on-scroll">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Let's Work <span className="text-gradient">Together</span>

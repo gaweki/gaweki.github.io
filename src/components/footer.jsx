@@ -1,5 +1,4 @@
 import React from "react";
-import Contact from "./contact";
 
 const Footer = () => (
   <footer
@@ -12,11 +11,8 @@ const Footer = () => (
     role="contentinfo"
     aria-label="Site footer"
   >
-    <div className="max-w-6xl mx-auto">
-      <Contact />
-    </div>
-    <div 
-      className="text-center py-4 text-sm"
+    <div
+      className="text-center py-6 text-sm max-w-6xl mx-auto"
       style={{ color: 'var(--color-text-muted)' }}
     >
       <p>© {new Date().getFullYear()} Andrel Karunia Sitanggang. Built with Gatsby & React.</p>
