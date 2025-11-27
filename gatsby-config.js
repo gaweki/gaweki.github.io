@@ -3,7 +3,7 @@ module.exports = {
     title: `Andrel Karunia Sitanggang - Frontend Developer`,
     description: `Personal website and portfolio of Andrel Karunia Sitanggang, an experienced Frontend Developer specializing in React, React Native, and modern web technologies.`,
     author: `Andrel Karunia Sitanggang`,
-    siteUrl: `https://gaweki.dev`,
+    siteUrl: ``,
     social: {
       github: `https://github.com/gaweki`,
       linkedin: `https://www.linkedin.com/in/andrel-karunia-sitanggang`,
