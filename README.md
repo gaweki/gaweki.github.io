@@ -58,7 +58,91 @@ npm run serve
 npm run clean
 ```
 
-## 📁 Project Structure
+## 🚀 Manual Deployment ke GitHub Pages
+
+Jika Anda ingin melakukan deployment manual ke branch `gh-pages`, ikuti langkah-langkah berikut:
+
+### Langkah 1: Build Project Gatsby
+```bash
+npm run build
+```
+Perintah ini akan menghasilkan folder `public` yang berisi file-file statis website.
+
+### Langkah 2: Cek Status Git
+```bash
+git status
+```
+Pastikan Anda berada di branch utama (biasanya `master` atau `main`).
+
+### Langkah 3: Buat Branch gh-pages Baru
+```bash
+git checkout --orphan gh-pages
+```
+Perintah ini membuat branch baru `gh-pages` tanpa riwayat commit sebelumnya.
+
+### Langkah 4: Hapus Semua File yang Ada
+```bash
+git rm -rf .
+```
+Ini akan menghapus semua file dari working directory tapi tetap mempertahankan folder `public`.
+
+### Langkah 5: Salin Isi Folder public ke Root
+```bash
+cp -r public/* .
+```
+Menyalin semua isi folder `public` ke direktori root.
+
+### Langkah 6: Tambahkan File ke Git
+```bash
+git add .
+```
+
+### Langkah 7: Commit File-file
+```bash
+git commit -m "Deploy to GitHub Pages"
+```
+
+### Langkah 8: Push ke Remote Repository
+```bash
+git push origin gh-pages --force
+```
+Gunakan `--force` karena ini akan menimpa branch `gh-pages` yang sudah ada.
+
+### Langkah 9: Kembali ke Branch Utama (Opsional)
+```bash
+git checkout master
+# atau
+git checkout main
+```
+
+### Catatan Penting:
+- Pastikan Anda sudah melakukan build terlebih dahulu sebelum memulai proses deploy
+- Gunakan `--force` hanya jika Anda yakin ingin menimpa branch `gh-pages` yang ada
+- Setelah deploy, website akan tersedia di GitHub Pages URL Anda
+- Untuk deploy selanjutnya, ulangi langkah 1, 3-8
+
+### Quick Deploy Script (Opsional)
+Anda bisa membuat script `deploy.sh` untuk mempermudah:
+```bash
+#!/bin/bash
+echo "Building project..."
+npm run build
+
+echo "Deploying to gh-pages..."
+git checkout --orphan gh-pages
+git rm -rf .
+cp -r public/* .
+git add .
+git commit -m "Deploy to GitHub Pages"
+git push origin gh-pages --force
+
+echo "Returning to main branch..."
+git checkout main
+
+echo "Deployment complete!"
+```
+
+## � Project Structure
 
 ```
 src/
