@@ -234,8 +234,10 @@ export default function ProjectsPage() {
             Let's discuss how I can help bring your ideas to life.
           </p>
           <button
+            type="button"
             onClick={openContact}
-            className="inline-block px-8 py-3 bg-accent-cyan text-dark-bg rounded-lg hover:bg-accent-blue hover:shadow-glow-cyan transition-all font-medium"
+            className="inline-block px-8 py-3 bg-accent-cyan text-dark-bg rounded-lg hover:bg-accent-blue hover:shadow-glow-cyan transition-all font-medium cursor-pointer relative z-10"
+            style={{ pointerEvents: 'auto' }}
           >
             Get In Touch
           </button>

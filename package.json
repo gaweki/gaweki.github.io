@@ -1,7 +1,7 @@
 {
   "name": "andrel-karunia-sitanggang-portfolio",
   "version": "1.0.0",
-  "description": "Personal website of Andrel Karunia Sitanggang - Frontend Developer",
+  "description": "Personal website of Andrel Karunia Sitanggang - Software Engineer",
   "scripts": {
     "develop": "gatsby develop",
     "start": "gatsby develop",

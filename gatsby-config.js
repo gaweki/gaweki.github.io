@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Andrel Karunia Sitanggang - Frontend Developer`,
-    description: `Personal website and portfolio of Andrel Karunia Sitanggang, an experienced Frontend Developer specializing in React, React Native, and modern web technologies.`,
+    title: `Andrel Karunia Sitanggang - Software Engineer`,
+    description: `Personal website and portfolio of Andrel Karunia Sitanggang, an experienced Software Engineer specializing in React, React Native, and modern web technologies.`,
     author: `Andrel Karunia Sitanggang`,
     siteUrl: `https://gaweki.github.io`,
     social: {

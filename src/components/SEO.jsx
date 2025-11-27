@@ -30,7 +30,7 @@ export default function SEO({ title, description, pathname, children }) {
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: 'Andrel Karunia Sitanggang',
-    jobTitle: 'Frontend Developer',
+    jobTitle: 'Software Engineer',
     url: site.siteMetadata.siteUrl,
     sameAs: [
       site.siteMetadata.social.github,
@@ -53,28 +53,32 @@ export default function SEO({ title, description, pathname, children }) {
       <title>{seo.title}</title>
       <meta name="description" content={seo.description} />
       <meta name="author" content={seo.author} />
-      
+
       {/* Open Graph */}
       <meta property="og:type" content="website" />
       <meta property="og:title" content={seo.title} />
       <meta property="og:description" content={seo.description} />
       <meta property="og:url" content={seo.url} />
       <meta property="og:site_name" content={site.siteMetadata.title} />
-      
+
       {/* Twitter Card */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={seo.title} />
       <meta name="twitter:description" content={seo.description} />
       <meta name="twitter:url" content={seo.url} />
-      
+
       {/* Canonical URL */}
       <link rel="canonical" href={seo.url} />
-      
+
+      {/* Favicons */}
+      <link rel="icon" type="image/png" href="/favicon.png" />
+      <link rel="apple-touch-icon" href="/icon.png" />
+
       {/* Structured Data */}
       <script type="application/ld+json">
         {JSON.stringify(personSchema)}
       </script>
-      
+
       {children}
     </>
   );

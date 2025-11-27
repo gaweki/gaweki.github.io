@@ -1,17 +1,15 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 
-const ContactContext = createContext();
+// Create context without default implementation to avoid confusion
+export const ContactContext = createContext(null);
 
 export function useContact() {
   const context = useContext(ContactContext);
+
   if (!context) {
-    // Fallback for when context is not available (shouldn't happen with proper provider setup)
-    return {
-      openContact: () => console.warn('Contact context not available'),
-      closeContact: () => console.warn('Contact context not available'),
-      isOpen: false
-    };
+    throw new Error('useContact must be used within a ContactProvider');
   }
+
   return context;
 }
 
@@ -28,7 +26,7 @@ export function ContactProvider({ children }) {
         setIsOpen(false);
       }
     };
-    
+
     window.addEventListener('keydown', handleEsc);
     return () => window.removeEventListener('keydown', handleEsc);
   }, [isOpen]);
@@ -49,13 +47,8 @@ export function ContactProvider({ children }) {
   );
 }
 
-export default function Contact() {
-  return <ContactPanel />;
-}
-
-function ContactPanel() {
-  const { isOpen, closeContact, openContact } = useContact();
-
+// Separate component that doesn't use useContact to avoid circular dependency
+function ContactPanel({ isOpen, closeContact, openContact }) {
   const contactMethods = [
     {
       name: 'Email',
@@ -81,7 +74,7 @@ function ContactPanel() {
     <>
       {/* Trigger Button */}
       <button
-        onClick={openContact}
+        onClick={isOpen ? closeContact : openContact}
         className="fixed bottom-8 right-8 bg-accent-cyan text-dark-bg p-4 rounded-full shadow-glow-cyan hover:shadow-glow-blue hover:scale-110 transition-all z-40"
         aria-label="Open contact panel"
         aria-expanded={isOpen}
@@ -161,3 +154,11 @@ function ContactPanel() {
     </>
   );
 }
+
+// Main Contact component that uses the context
+export default function Contact() {
+  const { isOpen, closeContact, openContact } = useContact();
+
+  return <ContactPanel isOpen={isOpen} closeContact={closeContact} openContact={openContact} />;
+}
+

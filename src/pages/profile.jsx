@@ -1,10 +1,12 @@
+import { useContact } from '../components/Contact';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 
 export default function ProfilePage() {
+  const { openContact } = useContact();
   const experiences = [
     {
-      title: 'Frontend Developer',
+      title: 'Software Engineer',
       company: 'PT Gajicermat Mandiri Digital Indonesia',
       period: 'Jan 2022 - Present (3+ years)',
       location: 'Jakarta Selatan, Indonesia',
@@ -83,9 +85,9 @@ export default function ProfilePage() {
 
   return (
     <Layout>
-      <SEO 
+      <SEO
         title="Profile - Andrel Karunia Sitanggang"
-        description="Detailed profile, experience timeline, and education background of Andrel Karunia Sitanggang, Frontend Developer."
+        description="Detailed profile, experience timeline, and education background of Andrel Karunia Sitanggang, Software Engineer."
         pathname="/profile"
       />
 
@@ -94,7 +96,7 @@ export default function ProfilePage() {
         <div className="mb-16 text-center animate-fade-in">
           <h1 className="text-5xl font-bold mb-4">About Me</h1>
           <p className="text-xl text-text-secondary max-w-3xl mx-auto">
-            Frontend Developer with 5+ years of experience building high-performance web and mobile applications.
+            Software Engineer with 5+ years of experience building high-performance web and mobile applications.
             Specialized in React ecosystem with a track record of delivering impactful projects.
           </p>
         </div>
@@ -104,13 +106,13 @@ export default function ProfilePage() {
           <h2 className="text-4xl font-bold mb-12 fade-in-on-scroll">Experience</h2>
           <div className="space-y-12">
             {experiences.map((exp, index) => (
-              <div 
+              <div
                 key={`${exp.company}-${index}`}
                 className="relative pl-8 border-l-2 border-accent-cyan/30 fade-in-on-scroll"
               >
                 {/* Timeline dot */}
                 <div className="absolute -left-[9px] top-0 w-4 h-4 bg-accent-cyan rounded-full shadow-glow-cyan" />
-                
+
                 <div className="pb-8">
                   <div className="mb-3">
                     <h3 className="text-2xl font-bold text-text-primary">{exp.title}</h3>
@@ -135,7 +137,7 @@ export default function ProfilePage() {
 
                   <div className="flex flex-wrap gap-2">
                     {exp.skills.map(skill => (
-                      <span 
+                      <span
                         key={skill}
                         className="px-3 py-1 bg-dark-bg-secondary text-accent-cyan text-sm rounded-full border border-accent-cyan/20"
                       >
@@ -225,12 +227,12 @@ export default function ProfilePage() {
           <p className="text-xl text-text-secondary mb-8">
             I'm always open to discussing new projects and opportunities.
           </p>
-          <a 
-            href="#contact" 
+          <button
+            onClick={openContact}
             className="inline-block px-8 py-3 bg-accent-cyan text-dark-bg rounded-lg hover:bg-accent-blue hover:shadow-glow-cyan transition-all font-medium"
           >
             Get In Touch
-          </a>
+          </button>
         </section>
       </div>
     </Layout>

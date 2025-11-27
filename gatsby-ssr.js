@@ -1,10 +1,7 @@
 import React from 'react';
 import { ContactProvider } from './src/components/Contact';
-import './src/styles/design-system.css';
-import './src/styles/mobile-optimization.css';
-import './src/styles/page-transition.css';
 
-// Wrap the entire app with ContactProvider
+// Wrap the entire app with ContactProvider for SSR
 export const wrapRootElement = ({ element }) => {
     return <ContactProvider>{element}</ContactProvider>;
 };

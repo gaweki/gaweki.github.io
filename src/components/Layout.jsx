@@ -3,8 +3,8 @@ import '../styles/design-system.css';
 import '../styles/mobile-optimization.css';
 import '../styles/page-transition.css';
 import { initAllAnimations } from '../utils/animations';
-import Contact, { ContactProvider } from './Contact';
-import Footer from './Footer';
+import Contact from './Contact';
+import Footer from './footer';
 import Header from './Header';
 
 export default function Layout({ children }) {
@@ -14,15 +14,13 @@ export default function Layout({ children }) {
   }, []);
 
   return (
-    <ContactProvider>
-      <div className="min-h-screen flex flex-col">
-        <Header />
-        <main className="flex-1 pt-16">
-          {children}
-        </main>
-        <Footer />
-        <Contact />
-      </div>
-    </ContactProvider>
+    <div className="min-h-screen flex flex-col">
+      <Header />
+      <main className="flex-1 pt-16">
+        {children}
+      </main>
+      <Footer />
+      <Contact />
+    </div>
   );
 }
