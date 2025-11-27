@@ -1,8 +1,10 @@
 import { Link } from 'gatsby';
 import { useState } from 'react';
+import { useContact } from './Contact';
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { openContact } = useContact();
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-dark-bg/90 backdrop-blur-md border-b border-dark-bg-tertiary/50">
@@ -47,14 +49,6 @@ export default function Header() {
               >
                 Projects
               </Link>
-            </li>
-            <li>
-              <a 
-                href="#contact" 
-                className="px-4 py-2 bg-accent-cyan text-dark-bg rounded-lg hover:bg-accent-blue transition-colors font-medium"
-              >
-                Contact
-              </a>
             </li>
           </ul>
 
@@ -109,14 +103,6 @@ export default function Header() {
               >
                 Projects
               </Link>
-            </li>
-            <li>
-              <a 
-                href="#contact" 
-                className="block py-2 px-4 bg-accent-cyan text-dark-bg rounded-lg hover:bg-accent-blue transition-colors font-medium text-center"
-              >
-                Contact
-              </a>
             </li>
           </ul>
         )}

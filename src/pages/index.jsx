@@ -1,7 +1,9 @@
+import { useContact } from '../components/Contact';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 
 export default function HomePage() {
+  const { openContact } = useContact();
   const skills = [
     { name: 'React.js', icon: '⚛️', level: 'Expert' },
     { name: 'React Native', icon: '📱', level: 'Expert' },
@@ -66,12 +68,12 @@ export default function HomePage() {
             >
               View My Work
             </a>
-            <a 
-              href="#contact" 
+            <button
+              onClick={openContact}
               className="px-8 py-3 border border-accent-cyan text-accent-cyan rounded-lg hover:bg-accent-cyan/10 transition-all font-medium"
             >
               Get In Touch
-            </a>
+            </button>
           </div>
         </div>
       </section>
@@ -163,12 +165,12 @@ export default function HomePage() {
           <p className="text-xl text-text-secondary mb-8 fade-in-on-scroll">
             I'm always interested in hearing about new projects and opportunities.
           </p>
-          <a 
-            href="#contact" 
+          <button
+            onClick={openContact}
             className="inline-block px-8 py-3 bg-accent-cyan text-dark-bg rounded-lg hover:bg-accent-blue hover:shadow-glow-cyan transition-all font-medium fade-in-on-scroll"
           >
             Get In Touch
-          </a>
+          </button>
         </div>
       </section>
     </Layout>

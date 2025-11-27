@@ -1,7 +1,25 @@
-import { useEffect, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 
-export default function Contact() {
+const ContactContext = createContext();
+
+export function useContact() {
+  const context = useContext(ContactContext);
+  if (!context) {
+    // Fallback for when context is not available (shouldn't happen with proper provider setup)
+    return {
+      openContact: () => console.warn('Contact context not available'),
+      closeContact: () => console.warn('Contact context not available'),
+      isOpen: false
+    };
+  }
+  return context;
+}
+
+export function ContactProvider({ children }) {
   const [isOpen, setIsOpen] = useState(false);
+
+  const openContact = () => setIsOpen(true);
+  const closeContact = () => setIsOpen(false);
 
   // Handle ESC key to close
   useEffect(() => {
@@ -24,17 +42,31 @@ export default function Contact() {
     }
   }, [isOpen]);
 
+  return (
+    <ContactContext.Provider value={{ openContact, closeContact, isOpen }}>
+      {children}
+    </ContactContext.Provider>
+  );
+}
+
+export default function Contact() {
+  return <ContactPanel />;
+}
+
+function ContactPanel() {
+  const { isOpen, closeContact, openContact } = useContact();
+
   const contactMethods = [
     {
       name: 'Email',
-      value: 'gaweki.dev@gmail.com',
-      href: 'mailto:gaweki.dev@gmail.com',
+      value: 'andrel.sitanggang@gmail.com',
+      href: 'mailto:andrel.sitanggang@gmail.com',
       icon: '✉️'
     },
     {
       name: 'LinkedIn',
       value: 'Andrel Karunia Sitanggang',
-      href: 'https://www.linkedin.com/in/andrel-karunia-sitanggang',
+      href: 'https://www.linkedin.com/in/sitanggangandrel',
       icon: '💼'
     },
     {
@@ -49,7 +81,7 @@ export default function Contact() {
     <>
       {/* Trigger Button */}
       <button
-        onClick={() => setIsOpen(true)}
+        onClick={openContact}
         className="fixed bottom-8 right-8 bg-accent-cyan text-dark-bg p-4 rounded-full shadow-glow-cyan hover:shadow-glow-blue hover:scale-110 transition-all z-40"
         aria-label="Open contact panel"
         aria-expanded={isOpen}
@@ -63,14 +95,14 @@ export default function Contact() {
       {isOpen && (
         <>
           {/* Backdrop */}
-          <div 
+          <div
             className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 animate-fade-in"
-            onClick={() => setIsOpen(false)}
+            onClick={closeContact}
             aria-hidden="true"
           />
 
           {/* Panel */}
-          <div 
+          <div
             className="fixed inset-y-0 right-0 w-full md:w-96 bg-dark-bg-secondary border-l border-dark-bg-tertiary shadow-2xl z-50 animate-slide-down"
             role="dialog"
             aria-modal="true"
@@ -83,7 +115,7 @@ export default function Contact() {
                   Get In Touch
                 </h2>
                 <button
-                  onClick={() => setIsOpen(false)}
+                  onClick={closeContact}
                   className="p-2 hover:bg-dark-bg-tertiary rounded-lg transition-colors"
                   aria-label="Close contact panel"
                 >

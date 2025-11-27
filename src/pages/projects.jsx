@@ -1,9 +1,11 @@
 import { useState } from 'react';
+import { useContact } from '../components/Contact';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 
 export default function ProjectsPage() {
   const [filter, setFilter] = useState('all');
+  const { openContact } = useContact();
 
   const projects = [
     {
@@ -114,8 +116,8 @@ export default function ProjectsPage() {
     { id: 'opensource', label: 'Open Source' },
   ];
 
-  const filteredProjects = filter === 'all' 
-    ? projects 
+  const filteredProjects = filter === 'all'
+    ? projects
     : projects.filter(p => p.category === filter);
 
   return (
@@ -136,7 +138,7 @@ export default function ProjectsPage() {
         </div>
 
         {/* Filter */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12 fade-in-on-scroll">
+        <div className="flex flex-wrap justify-center gap-3 mb-12">
           {categories.map(cat => (
             <button
               key={cat.id}
@@ -155,9 +157,14 @@ export default function ProjectsPage() {
         {/* Projects Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {filteredProjects.map((project, index) => (
-            <div 
-              key={project.title}
-              className="p-6 bg-dark-bg-secondary rounded-lg border border-dark-bg-tertiary hover:border-accent-cyan hover:shadow-glow-cyan transition-all fade-in-on-scroll group"
+            <div
+              key={`${project.title}-${index}`}
+              className="p-6 bg-dark-bg-secondary rounded-lg border border-dark-bg-tertiary hover:border-accent-cyan hover:shadow-glow-cyan transition-all group"
+              style={{
+                animationDelay: `${index * 0.1}s`,
+                opacity: 1,
+                transform: 'translateY(0)'
+              }}
             >
               {/* Header */}
               <div className="mb-4">
@@ -201,7 +208,7 @@ export default function ProjectsPage() {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 fade-in-on-scroll">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16" style={{ opacity: 1, transform: 'translateY(0)' }}>
           <div className="text-center p-6 bg-dark-bg-secondary rounded-lg border border-dark-bg-tertiary">
             <div className="text-4xl font-bold text-accent-cyan mb-2">10+</div>
             <div className="text-text-secondary">Projects Delivered</div>
@@ -221,17 +228,17 @@ export default function ProjectsPage() {
         </div>
 
         {/* CTA */}
-        <div className="text-center mt-16 fade-in-on-scroll">
+        <div className="text-center mt-16" style={{ opacity: 1, transform: 'translateY(0)' }}>
           <h2 className="text-3xl font-bold mb-4">Have a project in mind?</h2>
           <p className="text-xl text-text-secondary mb-8">
             Let's discuss how I can help bring your ideas to life.
           </p>
-          <a 
-            href="#contact" 
+          <button
+            onClick={openContact}
             className="inline-block px-8 py-3 bg-accent-cyan text-dark-bg rounded-lg hover:bg-accent-blue hover:shadow-glow-cyan transition-all font-medium"
           >
             Get In Touch
-          </a>
+          </button>
         </div>
       </div>
     </Layout>

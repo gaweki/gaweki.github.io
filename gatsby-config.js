@@ -6,7 +6,7 @@ module.exports = {
     siteUrl: `https://gaweki.github.io`,
     social: {
       github: `https://github.com/gaweki`,
-      linkedin: `https://www.linkedin.com/in/andrel-karunia-sitanggang`,
+      linkedin: `https://www.linkedin.com/in/sitanggangandrel`,
     },
   },
   // Add pathPrefix for GitHub Pages
