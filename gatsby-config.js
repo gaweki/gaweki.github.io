@@ -10,7 +10,7 @@ module.exports = {
     },
   },
   // Add pathPrefix for GitHub Pages
-  pathPrefix: process.env.PREFIX_PATHS ? '/gaki-website' : '',
+  pathPrefix: '',
   plugins: [
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
