@@ -10,7 +10,7 @@ export default function HomePage() {
     { name: 'TypeScript', icon: '📘', level: 'Advanced' },
     { name: 'Next.js', icon: '▲', level: 'Advanced' },
     { name: 'Tailwind CSS', icon: '🎨', level: 'Expert' },
-    { name: 'Redux', icon: '🔄', level: 'Advanced' },
+    { name: 'React Query', icon: '📡', level: 'Advanced' },
   ];
 
   const featuredProjects = [
@@ -25,13 +25,7 @@ export default function HomePage() {
       description: 'HRIS service mobile application for employee management and payroll',
       tech: ['React Native', 'TypeScript', 'Formik'],
       category: 'Mobile App'
-    },
-    {
-      title: 'Tokodistributor Web Platform',
-      description: 'B2B Marketplace web platform. Improved PageSpeed from 35 to 90 points',
-      tech: ['React 16', 'Redux', 'SEO Optimization'],
-      category: 'Web App'
-    },
+    }
   ];
 
   return (
@@ -43,22 +37,36 @@ export default function HomePage() {
 
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-accent-cyan/10 via-transparent to-accent-blue/10 pointer-events-none" />
+        {/* Background Video */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover z-0 opacity-40"
+        >
+          <source src="/Dark_Navy_Blue_Gradient_Video.mp4" type="video/mp4" />
+        </video>
+
+        {/* Subtle Overlay to ensure text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-dark-bg/20 via-transparent to-dark-bg z-[1] pointer-events-none" />
+        <div className="absolute inset-0 bg-dark-bg/30 z-[1] pointer-events-none" />
 
         <div className="container mx-auto text-center relative z-10 animate-fade-in">
           <p className="text-accent-cyan font-mono mb-4 text-lg animate-slide-down">
             Hi, my name is
           </p>
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-slide-up">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-slide-up py-2 leading-snug">
             Andrel Karunia Sitanggang
           </h1>
           <p className="text-3xl md:text-5xl text-text-secondary mb-8 animate-slide-up" style={{ animationDelay: '0.1s' }}>
-            I build exceptional digital experiences
+            Architecting High-Performance Digital Solutions
           </p>
-          <p className="text-xl text-text-muted max-w-2xl mx-auto mb-12 animate-slide-up" style={{ animationDelay: '0.2s' }}>
-            Software Engineer specializing in <span className="text-accent-cyan">React</span> and{' '}
+          <p className="text-xl text-text-muted max-w-3xl mx-auto mb-12 animate-slide-up" style={{ animationDelay: '0.2s' }}>
+            Specialist Software Engineer focused on building resilient, enterprise-grade applications with{' '}
+            <span className="text-accent-cyan">React</span> and{' '}
             <span className="text-accent-cyan">React Native</span>.
-            Passionate about creating performant, accessible, and beautiful web applications.
+            I help organizations scale their digital infrastructure through performant, accessible, and strategically-engineered software.
           </p>
 
           <div className="flex gap-4 justify-center flex-wrap animate-slide-up" style={{ animationDelay: '0.3s' }}>
